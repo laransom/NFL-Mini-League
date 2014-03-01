@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <title>Leaderboard</title>
+    <link rel="stylesheet" href="style.css>"
+  </head>
+
+  <body>
+    <h1>Standings</h1>
+
+    <h5>Team      Wins      Losses      Ties</h5>
+
+    <ol>
+       <% @standings.each do |team| %>
+          <li><%= "#{team[:team]}          #{team[:wins]}    #{team[:losses]}  #{team[:ties]}" %></li>
+        <% end %>
+    </ol>
+
+    <a href="/">Home</a>
+
+  </body>
+
+</html>
+
+
+

@@ -67,6 +67,21 @@ def sorted_standings
   standings_array.sort_by! { |hash| [-hash[:wins], hash[:losses]] }
 end
 
+before do
+  @standings = sorted_standings
+end
+
+get '/' do
+  erb :index
+end
+
+get "/leaderboard" do
+  erb :leaderboard
+end
+
+
+
+
 
 
 
