@@ -1,20 +1,31 @@
 <!DOCTYPE html>
 <html lang='en'>
   <head>
-    <title>Leaderboard</title>
-    <link rel="stylesheet" href="style.css>"
+    <title>Mini League Leaderboard</title>
+    <link rel="stylesheet" href="style.css">
   </head>
 
   <body>
     <h1>Standings</h1>
 
-    <h5>Team      Wins      Losses      Ties</h5>
 
-    <ol>
-       <% @standings.each do |team| %>
-          <li><%= "#{team[:team]}          #{team[:wins]}    #{team[:losses]}  #{team[:ties]}" %></li>
+    <table border="1" style="width:300px">
+      <tr>
+        <th>Team</th>
+        <th>Wins</th>
+        <th>Losses</th>
+        <th>Ties</th>
+      </tr>
+      <% @standings.each do |team| %>
+        <tr>
+          <td><%= team[:team] %></td>
+          <td><%= team[:wins] %></td>
+          <td><%= team[:losses] %></td>
+          <td><%= team[:ties] %></td>
+        </tr>
         <% end %>
-    </ol>
+    </table>
+
 
     <a href="/">Home</a>
 

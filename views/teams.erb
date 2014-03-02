@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <title><%= params[:team_name] %></title>
+    <link rel="stylesheet" href="../style.css">
+  </head>
+
+  <body>
+    <h1><%= params[:team_name] %> Results</h1>
+
+    <% @standings.each do |team| %>
+      <% if team[:team].to_s == params[:team_name] %>
+        <p>Wins: <%= team[:wins] %> Losses: <%= team[:losses] %></p>
+      <% end %>
+    <% end %>
+
+    <% i = 1 %>
+    <% @results.each do |game| %>
+      <% if game[:home_team] == params[:team_name] || game[:away_team] == params[:team_name] %>
+        <p>Game <%= i %>
+        <li><%= game[:away_team] %>: <%= game[:away_score] %></li>
+        <li><%= game[:home_team] %>: <%= game[:home_score] %></li>
+        <% i += 1 %>
+      <% end %>
+    <% end %>
+
+
+    <a href="/">Home</a>
+
+  </body>
+
+</html>
+

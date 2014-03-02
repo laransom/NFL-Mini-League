@@ -69,6 +69,7 @@ end
 
 before do
   @standings = sorted_standings
+  @results = results
 end
 
 get '/' do
@@ -79,6 +80,9 @@ get "/leaderboard" do
   erb :leaderboard
 end
 
+get"/team/:team_name" do
+  erb :teams
+end
 
 
 
