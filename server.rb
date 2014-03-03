@@ -35,10 +35,13 @@ end
 
 def unsorted_standings
   standings = {}
+def create_team(results, standings)
   results.each do |game|
     standings[game[:home_team].to_sym] = [{wins: 0}, {losses: 0}, {ties: 0}]
     standings[game[:away_team].to_sym] = [{wins: 0}, {losses: 0}, {ties: 0}]
   end
+end
+  create_team(results, standings)
 
   results.each do |game|
     if game[:home_score] > game[:away_score]
